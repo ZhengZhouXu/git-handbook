@@ -393,5 +393,5 @@ foo.txt
  >.[oa]
 
 # 忽略所有目录下的.vscode文件
- > >/.vscode
+ > **/.vscode
 ```
