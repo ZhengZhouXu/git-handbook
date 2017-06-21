@@ -23,8 +23,7 @@
 
 ## 其他
 > ### [1. git常用命令(图)](#git常用命令)    
->
-> ### [2. .gitignore 文件](#.gitignore 文件)
+> ### [2. .gitignore 文件](#.gitignore文件)
 
 # clone
 <table  >
@@ -379,7 +378,7 @@
 
 ![git常用命令](http://upload-images.jianshu.io/upload_images/4110638-b260420de12c53ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
- > #### .gitignore 文件
+ > #### .gitignore文件
 ```
 # 忽略掉所有文件名是 foo.txt 的文件.
 foo.txt
