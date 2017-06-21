@@ -1,14 +1,14 @@
 # clone
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td >git clone [url]</td>
     <td >url 远程地址，克隆一个远程的仓库</td>
   </tr>
 </table>
-
+
 # init
-<table border="2px">
+<table>
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td >git init</td>
@@ -17,7 +17,7 @@
 </table>
 
 # diff
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td >git diff</td>
@@ -50,7 +50,7 @@
 </table>
 
 # commit
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td >git commit</td>
@@ -67,7 +67,7 @@
 </table>
 
 # status
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git status</td>
@@ -76,7 +76,7 @@
 </table>
 
 # log
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git log</td>
@@ -105,7 +105,7 @@
 </table>
 
 # branch
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git branch</td>
@@ -134,7 +134,7 @@
 </table>
 
 # checkout
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git checkout [branch_name]</td>
@@ -147,7 +147,7 @@
 </table>
 
 # merge
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git merge [banch_name]</td>
@@ -156,7 +156,7 @@
 </table>
 
 # rebase
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git rebase [分支名]</td>
@@ -169,7 +169,7 @@
 </table>
 
 # remote
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git remote</td>
@@ -182,7 +182,7 @@
 </table>
 
 # pull
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git pull</td>
@@ -195,7 +195,7 @@
 </table>
 
 # fetch
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git fetch [remote_name]</td>
@@ -204,7 +204,7 @@
 </table>
 
 # push
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git push [remote_name|url] [本地分支名]:[远程分支名]</td>
@@ -218,7 +218,7 @@
 </table>
 
 # tag
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git tag</td>
@@ -235,7 +235,7 @@
 </table>
 
 # gitk
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>gitk</td>
@@ -244,7 +244,7 @@
 </table>
 
 # add
-<table border="2px">
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td >git add [path1] [path2]</td>
