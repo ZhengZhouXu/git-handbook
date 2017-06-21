@@ -1,8 +1,3 @@
-<style>
-  td {
-    min-width:200px
-  }
-</style>
 # clone
 <table border="2px">
   <tr><th>命令</th><th>说明</th></tr>
