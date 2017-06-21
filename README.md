@@ -23,7 +23,7 @@
 
 ## 其他
 > ### [1. git常用命令(图)](#git常用命令)    
-> ### [2. .gitignore 文件](#.gitignore文件)
+> ### [2. .gitignore文件](#gitignore文件)
 
 # clone
 <table  >
