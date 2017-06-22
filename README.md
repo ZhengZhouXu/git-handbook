@@ -1,10 +1,32 @@
-<style>
-  td {
-    min-width:200px;    
-  }
-</style>
+# 索引
+## 命令
+
+> ### [1. clone](#clone)
+> ### [2. init](#init)
+> ### [3. diff](#diff)
+> ### [4. commit](#commit)
+> ### [5. status](#status)
+> ### [6. log](#log)
+> ### [7. branch](#branch)
+> ### [8. checkout](#checkout)
+> ### [9. merge](#merge)
+> ### [10. rebase](#rebase)
+> ### [11. remote](#remote)
+> ### [12. pull](#pull)
+> ### [13. stash](#stash)
+> ### [14. fetch](#fetch)
+> ### [15. push](#push)
+> ### [16. tag](#tag)
+> ### [17. gitk](#gitk)
+> ### [18. add](#add)
+> ### [19. grep](#grep)  
+
+## 其他
+> ### [1. git常用命令(图)](#git常用命令)    
+> ### [2. .gitignore文件](#gitignore文件)
+
 # clone
-<table >
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td >git clone [url]</td>
@@ -13,7 +35,7 @@
 </table>
 
 # init
-<table >
+<table>
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td >git init</td>
@@ -22,7 +44,7 @@
 </table>
 
 # diff
-<table >
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td >git diff</td>
@@ -55,7 +77,7 @@
 </table>
 
 # commit
-<table >
+<table  >
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td >git commit</td>
@@ -136,6 +158,11 @@
     <td>git branch -D [banch_name]</td>
     <td>强制删除一个分支，无论是否合并</td>
   </tr>
+  <tr>
+    <td>git branch --track [branch_name] origin/[branch_name]</td>
+    <td>创建远程分支的追踪分支，简化pull操作，git pull branch_name即可</td>
+  </tr>
+
 </table>
 
 # checkout
@@ -174,7 +201,7 @@
 </table>
 
 # remote
-<table >
+<table>
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git remote</td>
@@ -196,6 +223,35 @@
   <tr>
     <td>git pull [remote_name|url] [branch_name]</td>
     <td>拉取一个远程仓库，并合并到指定分支中</td>
+  </tr>
+  <tr>
+    <td>git pull --rebase [remote_name|url] [branch_name]</td>
+    <td>拉取一个远程仓库，并合并（以rebase的形式合并）到指定分支中</td>
+  </tr>
+</table>
+
+# stash
+<table>
+  <tr><th>命令</th><th>说明</th></tr>
+  <tr>
+    <td>git stash</td>
+    <td>将当前工作区存储起来，并且工作区更改为上次提交状态的内容</td>
+  </tr>
+  <tr>
+    <td>git stash apply</td>
+    <td>调取上一次的存储</td>
+  </tr>
+  <tr>
+    <td>git stash list</td>
+    <td>查看所有的存储列表</td>
+  </tr>
+  <tr>
+    <td>git stash apply stash@{1}</td>
+    <td>调取指定的存储，1代表指定存储的编号，编号可以通过git stash list 查看</td>
+  </tr>
+  <tr>
+    <td>git stash clear</td>
+    <td>清空存储列表</td>
   </tr>
 </table>
 
@@ -219,7 +275,6 @@
     <td>git push [remote_name|url] [本地分支名]</td>
     <td>省略远程分支名，默认与本地同名的分支合并，不存在则新建远程分支名</td>
   </tr>
-  
 </table>
 
 # tag
@@ -231,7 +286,7 @@
   </tr>
   <tr>
     <td>git tag -l [search_str]</td>
-    <td>搜索指定的标签，search_str可以使用通配符，例如：git tag -l 'v1.4.2.*'</td>
+    <td>搜索指定的标签，search_str可以使用通配符，例如：git tag -l 'v1.4.2. >'</td>
   </tr>
   <tr>
     <td>git tag [tag_name] [commit_sha]</td>
@@ -275,26 +330,68 @@
 
 ![](http://upload-images.jianshu.io/upload_images/4110638-973ddf93cb25c0cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](http://upload-images.jianshu.io/upload_images/4110638-b260420de12c53ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+# grep
+<table>
+  <tr><th>命令</th><th>说明</th></tr>
+  <tr>
+    <td>git grep [str]</td>
+    <td>搜索指定的文件内容</td>
+  </tr>
+  <tr>
+    <td>git grep [str] [path|SHA|tag]</td>
+    <td>在指定的路径（或者文件名），提交的SHA，标签名，中搜索指定的文件内容</td>
+  </tr>
+  <tr>
+    <td>git grep -n [str]</td>
+    <td>搜索指定的文件内容，并且显示对应的行号</td>
+  </tr>
+  <tr>
+    <td>git grep --name-only [str]</td>
+    <td>搜索指定的文件内容，只显示包含该内容的文件名</td>
+  </tr>
+  <tr>
+    <td>git grep -a [str]</td>
+    <td>搜索指定的文件内容，显示 文件:匹配行数 ，例如 test.txt:2</td>
+  </tr>
+  <tr>
+    <td>git grep -e [条件1] --and -e [条件2]</td>
+    <td>且操作，搜索同时出现 条件1 和 条件2 的行</td>
+  </tr>   
+    <tr>
+    <td>git grep --all-match -e [条件1] -e [条件2]</td>
+    <td>或操作，搜索出现 条件1 或者出现 条件2 的行</td>
+  </tr>
+  </tr>   
+    <tr>
+    <td>git grep -e [条件1] --and \( -e [条件2] -e [条件3] \) </td>
+    <td>且与或混用操作，搜索出现 条件1 并且出现 条件2 或 条件3 的行，注意这里的<b> \( 之后 </b>和<b> \) 之前 </b>都必须加空格</td>
+  </tr> 
+</table>
 
 ---
 
 # 其他
 
-* #### .gitignore 文件
+# git常用命令
+
+![git常用命令](http://upload-images.jianshu.io/upload_images/4110638-b260420de12c53ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+ > #### .gitignore文件
 ```
 # 忽略掉所有文件名是 foo.txt 的文件.
 foo.txt
 
 # 忽略所有生成的 html 文件,
-*.html
+ >.html
 
 # foo.html是手工维护的，所以例外.
 !foo.html
 
 #  忽略所有.o 和 .a文件.
-*.[oa]
+ >.[oa]
 
 # 忽略所有目录下的.vscode文件
-**/.vscode
+ > **/.vscode
 ```
