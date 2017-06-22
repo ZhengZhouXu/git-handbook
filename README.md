@@ -28,13 +28,10 @@
 > ### [3. .建立空分支](#建立空分支)
 
 # clone
-<table  >
-  <tr><th>命令</th><th>说明</th></tr>
-  <tr>
-    <td >git clone [url]</td>
-    <td >url 远程地址，克隆一个远程的仓库</td>
-  </tr>
-</table>
+|命令|说明|
+|---|---|
+|git clone [url]|url 远程地址，克隆一个远程的仓库|
+|git clone [url] [dir]|克隆一个远程库到指定的目录中|
 
 # init
 |命令|说明|
