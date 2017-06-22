@@ -393,16 +393,16 @@
 foo.txt
 
 # 忽略所有生成的 html 文件,
- >.html
+.html
 
 # foo.html是手工维护的，所以例外.
 !foo.html
 
 #  忽略所有.o 和 .a文件.
- >.[oa]
+.[oa]
 
 # 忽略所有目录下的.vscode文件
- > **/.vscode
+**/.vscode
 ```
 
 ### 建立空分支
