@@ -20,10 +20,12 @@
 > ### [17. gitk](#gitk)
 > ### [18. add](#add)
 > ### [19. grep](#grep)  
+> ### [20. gc](#gc)
 
 ## 其他
 > ### [1. git常用命令(图)](#git常用命令)    
 > ### [2. .gitignore文件](#gitignore文件)
+> ### [3. .建立空分支](#建立空分支)
 
 # clone
 <table  >
@@ -35,13 +37,10 @@
 </table>
 
 # init
-<table>
-  <tr><th>命令</th><th>说明</th></tr>
-  <tr>
-    <td >git init</td>
-    <td >初始化一个仓库</td>
-  </tr>
-</table>
+|命令|说明|
+|---|---|
+|git init|初始化一个仓库|
+|git init --bare|创建一个裸仓库|
 
 # diff
 <table  >
@@ -166,17 +165,12 @@
 </table>
 
 # checkout
-<table >
-  <tr><th>命令</th><th>说明</th></tr>
-  <tr>
-    <td>git checkout [branch_name]</td>
-    <td>切换到一个已存在的分支</td>
-  </tr>
-  <tr>
-    <td>git checkout -b [branch_name]</td>
-    <td>新建一个分支，并进入该分支，-b参数后面可以跟正常的branch操作</td>
-  </tr>
-</table>
+
+|命令|说明|
+|---|---|
+|git checkout [branch_name]|切换到一个已存在的分支|
+|git checkout -b [branch_name]|新建一个分支，并进入该分支，-b参数后面可以跟正常的branch操作|
+|git checkout [path]|恢复指定的目录或文件到上一次提交的版本|
 
 # merge
 <table >
@@ -226,7 +220,7 @@
   </tr>
   <tr>
     <td>git pull --rebase [remote_name|url] [branch_name]</td>
-    <td>拉取一个远程仓库，并合并（以rebase的形式合并）到指定分支中</td>
+    <td>拉取一个远程仓库，并合并（以rebase的形式合并）到指定分支中</td>
   </tr>
 </table>
 
@@ -247,7 +241,7 @@
   </tr>
   <tr>
     <td>git stash apply stash@{1}</td>
-    <td>调取指定的存储，1代表指定存储的编号，编号可以通过git stash list 查看</td>
+    <td>调取指定的存储，1代表指定存储的编号，编号可以通过git stash list 查看</td>
   </tr>
   <tr>
     <td>git stash clear</td>
@@ -330,18 +324,28 @@
 
 ![](http://upload-images.jianshu.io/upload_images/4110638-973ddf93cb25c0cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+# reset
+| 命令 | 说明 |
+|-----|------|
+|git reset --hard HEAD|将工作目录恢复到上一次提交的状态（不恢复当前新建的文件，即未加入索引库的文件）|
 
+# revert
+| 命令 | 说明 |
+|-----|------|
+|git revert HEAD|撤销上一次的提交|
+|git revert HEAD^|撤销上上次的提交|
+|git revert HEAD~1|~号加数字n，表示撤销前n次提交|
 
 # grep
 <table>
   <tr><th>命令</th><th>说明</th></tr>
   <tr>
     <td>git grep [str]</td>
-    <td>搜索指定的文件内容</td>
+    <td>搜索指定的文件内容</td>
   </tr>
   <tr>
     <td>git grep [str] [path|SHA|tag]</td>
-    <td>在指定的路径（或者文件名），提交的SHA，标签名，中搜索指定的文件内容</td>
+    <td>在指定的路径（或者文件名），提交的SHA，标签名，中搜索指定的文件内容</td>
   </tr>
   <tr>
     <td>git grep -n [str]</td>
@@ -357,28 +361,33 @@
   </tr>
   <tr>
     <td>git grep -e [条件1] --and -e [条件2]</td>
-    <td>且操作，搜索同时出现 条件1 和 条件2 的行</td>
+    <td>且操作，搜索同时出现 条件1 和 条件2 的行</td>
   </tr>   
     <tr>
     <td>git grep --all-match -e [条件1] -e [条件2]</td>
-    <td>或操作，搜索出现 条件1 或者出现 条件2 的行</td>
+    <td>或操作，搜索出现 条件1 或者出现 条件2 的行</td>
   </tr>
   </tr>   
     <tr>
     <td>git grep -e [条件1] --and \( -e [条件2] -e [条件3] \) </td>
-    <td>且与或混用操作，搜索出现 条件1 并且出现 条件2 或 条件3 的行，注意这里的<b> \( 之后 </b>和<b> \) 之前 </b>都必须加空格</td>
+    <td>且与或混用操作，搜索出现 条件1 并且出现 条件2 或 条件3 的行，注意这里的<b> \( 之后 </b>和<b> \) 之前 </b>都必须加空格</td>
   </tr> 
 </table>
+
+# gc
+| 命令 | 说明 |
+|-----|------|
+|git gc|压缩git日志|
 
 ---
 
 # 其他
 
-# git常用命令
+### git常用命令
 
 ![git常用命令](http://upload-images.jianshu.io/upload_images/4110638-b260420de12c53ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
- > #### .gitignore文件
+### .gitignore文件
 ```
 # 忽略掉所有文件名是 foo.txt 的文件.
 foo.txt
@@ -394,4 +403,13 @@ foo.txt
 
 # 忽略所有目录下的.vscode文件
  > **/.vscode
+```
+
+### 建立空分支
+```
+$git symbolic-ref HEAD refs/heads/[name]
+
+$rm .git/index
+
+$git clean -fdx 
 ```
