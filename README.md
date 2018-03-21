@@ -21,6 +21,7 @@
 > ### [18. add](#add)
 > ### [19. grep](#grep)  
 > ### [20. gc](#gc)
+> ### [21. gc](#reset)
 
 ## 其他
 > ### [1. git常用命令(图)](#git常用命令)    
@@ -205,21 +206,13 @@
 </table>
 
 # pull
-<table >
-  <tr><th>命令</th><th>说明</th></tr>
-  <tr>
-    <td>git pull</td>
-    <td>拉取origin地址，并与master合并，origin可以通过 git config --get remote.origin.url 查看</td>
-  </tr>
-  <tr>
-    <td>git pull [remote_name|url] [branch_name]</td>
-    <td>拉取一个远程仓库，并合并到指定分支中</td>
-  </tr>
-  <tr>
-    <td>git pull --rebase [remote_name|url] [branch_name]</td>
-    <td>拉取一个远程仓库，并合并（以rebase的形式合并）到指定分支中</td>
-  </tr>
-</table>
+| 命令 | 说明 |
+|-----|------|
+|git pull|拉取origin地址，并与master合并，origin可以通过 git config --get remote.origin.url 查看|
+|git pull [remote_name 或 url] [branch_name] |拉取一个远程仓库，并合并到指定分支中|
+|git pull --rebase [remote_name 或 url] [branch_name]|拉取一个远程仓库，并合并（以rebase的形式合并）到指定分支中|
+|git pull [remote_name 或 url] [branch_name] --allow-unrelated-histories|当报错：fatal: refusing to merge unrelated histories 时。[具体情况见链接](http://blog.csdn.net/lindexi_gd/article/details/52554159)|
+
 
 # stash
 <table>
